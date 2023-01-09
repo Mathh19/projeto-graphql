@@ -1,7 +1,7 @@
-const user = require('./user')
+const { mutations: user } = require('./user')
 const profile = require('./profile')
 
- module.exports = {
-    ...user,
-    ...profile,
- }
+module.exports = {
+  ...user,
+  ...profile,
+}

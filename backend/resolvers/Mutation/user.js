@@ -1,19 +1,36 @@
+const bcrypt = require('bcrypt');
 const db = require('../../config/db');
 const { profile: findProfile } = require('../Query/profile');
-const { user: findUser, users } = require('../Query/user');
+const { user: findUser } = require('../Query/user');
 
-module.exports = {
+const mutations = {
+  async registerUser(_, { data }) {
+    return mutations.newUser(_, {
+      data: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        profiles: null
+      }
+    });
+  },
   async newUser(_, { data }) {
     try {
       const idsProfiles = [];
-      if (data.profiles) {
-        for (let filter of data.profiles) {
-          const profile = await findProfile(_, { filter });
-          if (profile) idsProfiles.push(profile.id);
-        }
+
+      if (!data.profiles || !data.profiles.length) {
+        data.profiles = [{
+          name: 'comum'
+        }]
       }
 
-      // delete data.profiles;
+      for (let filter of data.profiles) {
+        const profile = await findProfile(_, { filter });
+        if (profile) idsProfiles.push(profile.id);
+      }
+
+      const salt = bcrypt.genSaltSync();
+      data.password = bcrypt.hashSync(data.password, salt);
 
       const [id] = await db('users')
         .insert({
@@ -68,6 +85,11 @@ module.exports = {
           }
         }
 
+        if (data.password) {
+          const salt = bcrypt.genSaltSync();
+          data.password = bcrypt.hashSync(data.password, salt);
+        }
+
         delete data.profiles
         await db('users')
           .where({ id })
@@ -78,4 +100,8 @@ module.exports = {
       throw new Error(err.sqlMessage);
     }
   }
+}
+
+module.exports = {
+  mutations,
 }
