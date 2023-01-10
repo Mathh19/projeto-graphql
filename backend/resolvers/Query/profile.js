@@ -1,14 +1,16 @@
 const db = require('../../config/db')
 
 module.exports = {
-  async profiles() {
+  async profiles(parent, args, ctx) {
+    ctx && ctx.validateAdmin();
     return db('profiles');
   },
-  async profile(_, { filter }) {
+  async profile(_, { filter }, ctx) {
+    ctx && ctx.validateAdmin();
 
     if (!filter) return null;
-
     const { id, name } = filter;
+
     if (id) {
       return db('profiles')
         .select('*')

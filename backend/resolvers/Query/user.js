@@ -21,13 +21,16 @@ module.exports = {
 
     return getUserLogged(user);
   },
-  async users() {
+  async users(parent, args, ctx) {
+    ctx && ctx.validateAdmin();
     return db('users');
   },
-  async user(_, { filter }) {
-    if (!filter) return null;
+  async user(_, { filter }, ctx) {
+    ctx && ctx.validateFilterUser(filter);
 
+    if (!filter) return null;
     const { id, email } = filter;
+
     if (id) {
       return db('users')
         .select('*')

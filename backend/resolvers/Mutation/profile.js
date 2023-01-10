@@ -2,7 +2,8 @@ const db = require('../../config/db');
 const { profile: findProfile } = require('../Query/profile');
 
 module.exports = {
-  async newProfile(_, { data }) {
+  async newProfile(_, { data }, ctx) {
+    ctx && ctx.validateAdmin();
     try {
       const [id] = await db('profiles')
         .insert(data);
@@ -14,7 +15,8 @@ module.exports = {
       throw new Error(err.sqlMessage);
     }
   },
-  async deleteProfile(_, args) {
+  async deleteProfile(_, args, ctx) {
+    ctx && ctx.validateAdmin();
     try {
       if (!args) return null;
       const profile = await findProfile(_, args);
@@ -30,7 +32,8 @@ module.exports = {
       throw new Error(err.sqlMessage);
     }
   },
-  async updateProfile(_, { filter, data }) {
+  async updateProfile(_, { filter, data }, ctx) {
+    ctx && ctx.validateAdmin();
     try {
       if (!filter) return null;
       const profile = await findProfile(_, { filter });
