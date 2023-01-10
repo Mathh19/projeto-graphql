@@ -1,6 +1,26 @@
-const db = require('../../config/db')
+const db = require('../../config/db');
+const bcrypt = require('bcrypt');
+const { getUserLogged } = require('../common/user');
+
 
 module.exports = {
+  async login(_, { data }) {
+    const user = await db('users')
+      .where({ email: data.email })
+      .first();
+
+    if(!user) {
+      throw new Error('Usuário/Senha inválido');
+    }
+
+    const isEqual = bcrypt.compareSync(data.password, user.password);
+
+    if(!isEqual) {
+      throw new Error('Senha inválida');
+    }
+
+    return getUserLogged(user);
+  },
   async users() {
     return db('users');
   },
