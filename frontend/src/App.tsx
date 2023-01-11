@@ -1,7 +1,9 @@
+import { Bar } from './components/Bar';
+
 function App() {
   return (
     <div className="App">
-      <h1>Olá</h1>
+      <Bar />
     </div>
   );
 }
