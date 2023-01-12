@@ -1,9 +1,11 @@
 export const theme = {
   colors: {
-    darkPurple: 'rgb(27, 36, 48)',
-    lightPurple: 'rgb(81, 85, 126)',
+    darkPurple: '#1B2430',
+    lightPurple: '#51557E',
     white: '#fafafa',
     mediumGray: '#DDDDDD',
+    mainBg: '#12141f',
+    pink: '#AF0171',
   },
   font: {
     family: {

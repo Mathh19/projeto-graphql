@@ -4,7 +4,7 @@ export const Bar = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-wrap: nowrap;
-    background-color: ${theme.colors.darkPurple};
+    background-color: ${theme.colors.lightPurple};
     color: ${theme.colors.white};
     font-size: 2rem;
     padding: ${theme.spacings.small} ${theme.spacings.medium};
