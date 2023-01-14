@@ -1,11 +1,13 @@
 export const theme = {
   colors: {
-    darkPurple: '#1B2430',
+    primaryColor: '#1B2430',
+    secondaryColor: '#AF0171',
+    lightPrimaryColor: '#283647',
     lightPurple: '#51557E',
     white: '#fafafa',
     mediumGray: '#DDDDDD',
+    darkGray: 'rgba(102, 102, 102, 0.27)',
     mainBg: '#12141f',
-    pink: '#AF0171',
   },
   font: {
     family: {

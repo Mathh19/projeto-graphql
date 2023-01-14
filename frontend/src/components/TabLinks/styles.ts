@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+export const Label = styled.label`
+
+`;
+
 export const Button = styled.button`
   ${({ theme }) => css`
     position: relative;
@@ -9,10 +13,10 @@ export const Button = styled.button`
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 0;
     border: none;
     font-weight: bold;
-    color: ${theme.colors.pink};
+    color: ${theme.colors.secondaryColor};
     background: none;
 
     ::after {
@@ -22,7 +26,7 @@ export const Button = styled.button`
       left: 0;
       width: 0;
       height: 0.4rem;
-      background-color: ${theme.colors.pink};
+      background-color: ${theme.colors.secondaryColor};
     }
 
     :focus::after {

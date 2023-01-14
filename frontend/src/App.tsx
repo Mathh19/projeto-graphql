@@ -1,9 +1,9 @@
-import { Bar } from './components/Bar';
+import { Base } from './templates/Base';
 
 function App() {
   return (
     <div className="App">
-      <Bar />
+      <Base />
     </div>
   );
 }

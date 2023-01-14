@@ -6,6 +6,6 @@ export const Nav = styled.nav`
     justify-content: center;
     gap: ${theme.spacings.huge};
     color: ${theme.colors.white};
-    background-color: ${theme.colors.darkPurple};
+    background-color: ${theme.colors.primaryColor};
   `}
 `;
