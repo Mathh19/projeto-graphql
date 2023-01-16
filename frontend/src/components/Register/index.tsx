@@ -1,18 +1,24 @@
 import { useState } from 'react';
-import { TabLinks } from '../TabLinks';
-import { Tab } from '../Tab';
+import { Tabs } from '../Tabs';
 import * as Styled from './styles';
 import { Form } from '../Form';
 
 export const Register = () => {
   const [register, setRegister] = useState(true);
+  const tabs = [
+    {
+      id: '1',
+      content: 'Register',
+    },
+    {
+      id: '2',
+      content: 'Login',
+    },
+  ];
 
   return (
     <Styled.Container>
-      <Tab>
-        <TabLinks onClick={() => setRegister(true)}>Registrar</TabLinks>
-        <TabLinks onClick={() => setRegister(false)}>Login</TabLinks>
-      </Tab>
+      <Tabs tabs={tabs} />
       <div className="sessions">
         <Styled.Section>
           <Styled.Title>{register ? 'Registrar' : 'Login'}</Styled.Title>

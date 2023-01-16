@@ -25,7 +25,7 @@ export const Button = styled.button`
       background-color: ${theme.colors.secondaryColor};
     }
 
-    :focus::after {
+    :disabled::after {
       left: 0;
       width: 100%;
     }

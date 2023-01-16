@@ -1,10 +1,24 @@
 import * as Styled from './styles';
 
-type TabLinkProps = {
-  children: React.ReactNode;
-  onClick?: () => void;
+export type TabLinkProps = {
+  id: string;
+  content: string;
+  svg?: React.ReactElement;
+  disabled: boolean;
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-export const TabLinks = ({ children, onClick }: TabLinkProps) => {
-  return <Styled.Button onClick={onClick}>{children}</Styled.Button>;
+export const TabLinks = ({
+  content,
+  svg,
+  disabled,
+  id,
+  onClick,
+}: TabLinkProps) => {
+  return (
+    <Styled.Button disabled={disabled} id={id} onClick={onClick}>
+      {svg}
+      {content}
+    </Styled.Button>
+  );
 };

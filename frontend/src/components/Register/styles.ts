@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Nav as NavStyles } from '../Tab/styles';
+import { Nav as NavStyles } from '../Tabs/styles';
 import { Button as ButtonStyles } from '../TabLinks/styles';
 
 export const Container = styled.div`
@@ -20,7 +20,7 @@ export const Container = styled.div`
       text-transform: uppercase;
       font-weight: normal;
 
-      :focus {
+      :disabled {
         font-weight: 700;
       }
     }
