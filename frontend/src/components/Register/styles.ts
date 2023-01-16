@@ -39,7 +39,7 @@ export const Container = styled.div`
   `}
 `;
 
-export const Session = styled.div`
+export const Section = styled.section`
   ${({ theme }) => css`
     width: 100%;
     margin-top: ${theme.spacings.medium};

@@ -14,13 +14,13 @@ export const Register = () => {
         <TabLinks onClick={() => setRegister(false)}>Login</TabLinks>
       </Tab>
       <div className="sessions">
-        <Styled.Session>
+        <Styled.Section>
           <Styled.Title>{register ? 'Registrar' : 'Login'}</Styled.Title>
           <Form stateSession={register} />
-        </Styled.Session>
-        <Styled.Session>
+        </Styled.Section>
+        <Styled.Section>
           <Styled.Title>Resultado</Styled.Title>
-        </Styled.Session>
+        </Styled.Section>
       </div>
     </Styled.Container>
   );

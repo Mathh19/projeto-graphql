@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const Label = styled.label`
-
-`;
-
 export const Button = styled.button`
   ${({ theme }) => css`
     position: relative;
