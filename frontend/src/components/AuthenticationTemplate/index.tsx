@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Tabs } from '../Tabs';
-import * as Styled from './styles';
 import { Form } from '../Form';
+import { Results } from '../Results';
+import { Tabs } from '../Tabs';
+import { Title } from '../Title';
+import * as Styled from './styles';
 
-export const Register = () => {
-  const [register, setRegister] = useState(true);
+export const Authentication = () => {
   const tabs = [
     {
       id: '1',
@@ -19,15 +19,15 @@ export const Register = () => {
   return (
     <Styled.Container>
       <Tabs tabs={tabs} />
-      <div className="sessions">
+      <Styled.Sessions>
         <Styled.Section>
-          <Styled.Title>{register ? 'Registrar' : 'Login'}</Styled.Title>
-          <Form stateSession={register} />
+          <Title text="Registro" />
+          <Form stateSession="register" />
         </Styled.Section>
         <Styled.Section>
-          <Styled.Title>Resultado</Styled.Title>
+          <Results />
         </Styled.Section>
-      </div>
+      </Styled.Sessions>
     </Styled.Container>
   );
 };

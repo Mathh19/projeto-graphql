@@ -3,10 +3,13 @@ import { Tabs } from '../../components/Tabs';
 import { Fingerprint } from '@styled-icons/material';
 import { Users } from '@styled-icons/heroicons-solid';
 import { UserCheck } from '@styled-icons/boxicons-regular/UserCheck';
-import { Register } from '../../components/Register';
+import { Authentication } from '../../components/AuthenticationTemplate';
+// import { Container } from '../../components/Container';
+// import { Register } from '../../components/Register';
+// import { Login } from '../../components/Login';
 
 export const Base = () => {
-  const tabs = [
+  const mainTabs = [
     {
       id: '1',
       svg: <Fingerprint />,
@@ -27,8 +30,8 @@ export const Base = () => {
   return (
     <>
       <Bar />
-      <Tabs tabs={tabs} />
-      <Register />
+      <Tabs tabs={mainTabs} />
+      <Authentication />
     </>
   );
 };

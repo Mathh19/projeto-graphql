@@ -24,18 +24,19 @@ export const Container = styled.div`
         font-weight: 700;
       }
     }
+  `}
+`;
 
-    .sessions {
-      display: flex;
-      justify-content: space-around;
-      gap: 20px;
-      padding: 0 ${theme.spacings.large};
+export const Sessions = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 ${theme.spacings.large};
 
-      @media ${theme.media.lteMedium} {
-        flex-wrap: wrap;
-      }
+    @media ${theme.media.lteMedium} {
+      flex-wrap: wrap;
     }
-
   `}
 `;
 
@@ -43,14 +44,5 @@ export const Section = styled.section`
   ${({ theme }) => css`
     width: 100%;
     margin-top: ${theme.spacings.medium};
-  `}
-`;
-
-export const Title = styled.h2`
-  ${({ theme }) => css`
-    font-weight: normal;
-    padding-bottom: 2px;
-    border-bottom: 1px solid ${theme.colors.darkGray};
-    color: ${theme.colors.secondaryColor};
   `}
 `;

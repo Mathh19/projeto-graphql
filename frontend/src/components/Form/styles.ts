@@ -39,6 +39,11 @@ export const Input = styled.input`
     border: none;
     border-bottom: 1px solid ${theme.colors.mediumGray};
     font-size: ${theme.font.sizes.small};
+
+    :focus,
+    :valid {
+      border-bottom: 1px solid ${theme.colors.secondaryColor};
+    }
   `}
 `;
 

@@ -17,4 +17,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.font.family.default};
     background-color: ${({ theme }) => theme.colors.mainBg};
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.secondaryColor}
+  }
 `;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TabLinks } from '../TabLinks';
 import * as Styled from './styles';
 
-type TabsProps = {
+export type TabsProps = {
   tabs: {
     id: string;
     content: string;
@@ -20,16 +20,18 @@ export const Tabs = ({ tabs }: TabsProps) => {
   return (
     <Styled.Nav>
       {tabs.map((tab) => (
-        <TabLinks
-          key={tab.id}
-          id={tab.id}
-          content={tab.content}
-          svg={tab.svg}
-          disabled={currentTab === `${tab.id}`}
-          onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-            handleTabClick(e)
-          }
-        />
+        <a key={tab.id}>
+          <TabLinks
+            key={tab.id}
+            id={tab.id}
+            content={tab.content}
+            svg={tab.svg}
+            disabled={currentTab === `${tab.id}`}
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+              handleTabClick(e)
+            }
+          />
+        </a>
       ))}
     </Styled.Nav>
   );
