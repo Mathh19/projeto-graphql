@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TabLinks } from '../TabLinks';
 import * as Styled from './styles';
 
 export type TabsProps = {
@@ -7,6 +6,7 @@ export type TabsProps = {
     id: string;
     content: string;
     svg?: React.ReactElement;
+    session: string;
   }[];
 };
 
@@ -18,21 +18,19 @@ export const Tabs = ({ tabs }: TabsProps) => {
   };
 
   return (
-    <Styled.Nav>
+    <Styled.Tab>
       {tabs.map((tab) => (
-        <a key={tab.id}>
-          <TabLinks
-            key={tab.id}
+        <a key={tab.id} href={tab.session}>
+          <Styled.Button
+            disabled={currentTab === tab.id}
             id={tab.id}
-            content={tab.content}
-            svg={tab.svg}
-            disabled={currentTab === `${tab.id}`}
-            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-              handleTabClick(e)
-            }
-          />
+            onClick={handleTabClick}
+          >
+            {tab.svg}
+            {tab.content}
+          </Styled.Button>
         </a>
       ))}
-    </Styled.Nav>
+    </Styled.Tab>
   );
 };

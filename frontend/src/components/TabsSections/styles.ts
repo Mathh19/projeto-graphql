@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { Nav as NavStyles } from '../Tabs/styles';
-import { Button as ButtonStyles } from '../TabLinks/styles';
+import { Tab as TabStyles } from '../Tabs/styles';
+import { Button as ButtonStyles } from '../Tabs/styles';
 
 export const Container = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
     padding: 0 20px;
-    ${NavStyles} {
+    ${TabStyles} {
       display: flex;
       justify-content: flex-start;
       padding: 0 10px;
@@ -27,22 +27,8 @@ export const Container = styled.div`
   `}
 `;
 
-export const Sessions = styled.div`
+export const Content = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 0 ${theme.spacings.large};
-
-    @media ${theme.media.lteMedium} {
-      flex-wrap: wrap;
-    }
-  `}
-`;
-
-export const Section = styled.section`
-  ${({ theme }) => css`
-    width: 100%;
-    margin-top: ${theme.spacings.medium};
+    padding: ${theme.spacings.large} ${theme.spacings.xlarge};
   `}
 `;

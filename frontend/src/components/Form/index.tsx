@@ -1,14 +1,14 @@
 import * as Styled from './styles';
 
 export type FormProps = {
-  stateSession: 'register' | 'login';
+  session: 'register' | 'login';
 };
 
-export const Form = ({ stateSession }: FormProps) => {
+export const Form = ({ session }: FormProps) => {
   return (
     <Styled.Form>
       <div className="box">
-        {stateSession === 'register' && (
+        {session === 'register' && (
           <>
             <Styled.Input type="text" name="name" required />
             <Styled.Label>Nome</Styled.Label>

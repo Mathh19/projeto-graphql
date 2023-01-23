@@ -2,16 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const Form = styled.form`
   ${({ theme }) => css`
+    min-width: 48vw;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     margin-top: ${theme.spacings.medium};
     color: ${theme.colors.secondaryColor};
 
     .container-button {
       width: 100%;
       display: flex;
-      justify-content: center;
     }
 
     .box {
