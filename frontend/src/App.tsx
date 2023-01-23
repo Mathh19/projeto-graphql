@@ -3,26 +3,26 @@ import { Users } from '@styled-icons/heroicons-solid';
 import { Fingerprint } from '@styled-icons/material';
 import { Outlet } from 'react-router-dom';
 import { Bar } from './components/Bar';
-import { Tabs } from './components/Tabs';
+import { Navbar } from './components/Navbar';
 
 const mainTabs = [
   {
     id: '1',
     svg: <Fingerprint />,
     content: 'Autenticação',
-    session: '/',
+    link: '/',
   },
   {
     id: '2',
     svg: <Users />,
     content: 'Usuários',
-    session: '/',
+    link: 'users',
   },
   {
     id: '3',
     svg: <UserCheck />,
     content: 'Perfis',
-    session: '/',
+    link: '/',
   },
 ];
 
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Bar />
-      <Tabs tabs={mainTabs} />
+      <Navbar tabs={mainTabs} />
       <Outlet />
     </div>
   );

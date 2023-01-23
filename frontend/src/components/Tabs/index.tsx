@@ -6,7 +6,7 @@ export type TabsProps = {
     id: string;
     content: string;
     svg?: React.ReactElement;
-    session: string;
+    link: string;
   }[];
 };
 
@@ -20,7 +20,7 @@ export const Tabs = ({ tabs }: TabsProps) => {
   return (
     <Styled.Tab>
       {tabs.map((tab) => (
-        <a key={tab.id} href={tab.session}>
+        <a key={tab.id} href={tab.link}>
           <Styled.Button
             disabled={currentTab === tab.id}
             id={tab.id}

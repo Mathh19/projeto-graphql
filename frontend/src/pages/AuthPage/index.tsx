@@ -9,12 +9,12 @@ export const AuthPage = () => {
     {
       id: '1',
       content: 'Cadastrar',
-      session: '#register',
+      link: '#register',
     },
     {
       id: '2',
       content: 'Login',
-      session: '#login',
+      link: '#login',
     },
   ];
 
