@@ -1,5 +1,7 @@
-import { ContainerSections } from '../../components/ContainerSections';
-import { Form } from '../../components/Form';
+import { FormAuth } from '../../components/FormAuth';
+import { Results } from '../../components/Results';
+import { Section } from '../../components/Section';
+import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
 import { Title } from '../../components/Title';
 import * as Styled from './styles';
@@ -19,26 +21,23 @@ export const AuthPage = () => {
   ];
 
   return (
-    <Styled.Container>
-      <TabSections tabs={tabs}>
-        <Styled.Sections>
-          <Styled.Section>
-            <ContainerSections>
-              <Styled.SectionForm id="register">
-                <Title text="Cadastrar" />
-                <Form session="register" />
-              </Styled.SectionForm>
-              <Styled.SectionForm id="login">
-                <Title text="Login" />
-                <Form session="login" />
-              </Styled.SectionForm>
-            </ContainerSections>
-          </Styled.Section>
-          <Styled.Section>
-            <Title text="Results" />
-          </Styled.Section>
-        </Styled.Sections>
-      </TabSections>
-    </Styled.Container>
+    <TabSections tabs={tabs}>
+      <Sections>
+        <Section id="register">
+          <Styled.Wrapper>
+            <Title text="Cadastrar" />
+            <FormAuth session="register" />
+          </Styled.Wrapper>
+          <Results />
+        </Section>
+        <Section id="login">
+          <Styled.Wrapper>
+            <Title text="Login" />
+            <FormAuth session="login" />
+          </Styled.Wrapper>
+          <Results />
+        </Section>
+      </Sections>
+    </TabSections>
   );
 };

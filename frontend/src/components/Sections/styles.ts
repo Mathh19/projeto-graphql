@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-
+  ${() => css`
+    display: flex;
+    overflow: hidden;
   `}
 `;

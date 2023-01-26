@@ -1,22 +1,5 @@
-import styled, { css } from 'styled-components';
-export const Container = styled.div``;
+import styled from 'styled-components';
 
-export const Sections = styled.div`
-  ${({ theme }) => css`
-    width: 100%;
-    display: flex;
-    gap: 10px;
-
-    @media ${theme.media.lteMedium} {
-      flex-wrap: wrap;
-    }
-  `}
+export const Wrapper = styled.div`
+  width: 100%;
 `;
-
-export const Section = styled.section`
-  ${() => css`
-    width: 100%;
-  `}
-`;
-
-export const SectionForm = styled.div``;
