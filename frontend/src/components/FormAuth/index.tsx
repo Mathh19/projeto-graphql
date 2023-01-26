@@ -13,7 +13,7 @@ export const FormAuth = ({ session }: FormAuthProps) => {
         <BoxForm nameInput="name" typeInput="text" nameLabel="Nome" />
       )}
       <BoxForm nameInput="email" typeInput="email" nameLabel="Email" />
-      <BoxForm nameInput="password" typeInput="password" nameLabel="senha" />
+      <BoxForm nameInput="password" typeInput="password" nameLabel="Senha" />
       <Styled.Button>Logar</Styled.Button>
     </Form>
   );
