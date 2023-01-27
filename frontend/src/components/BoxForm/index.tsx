@@ -4,12 +4,23 @@ type BoxFormProps = {
   typeInput: string;
   nameInput: string;
   nameLabel: string;
+  isRequired?: boolean;
 };
 
-export const BoxForm = ({ nameInput, typeInput, nameLabel }: BoxFormProps) => {
+export const BoxForm = ({
+  nameInput,
+  typeInput,
+  nameLabel,
+  isRequired = true,
+}: BoxFormProps) => {
   return (
     <Styled.Box>
-      <Styled.Input type={typeInput} name={nameInput} required />
+      <Styled.Input
+        type={typeInput}
+        name={nameInput}
+        placeholder={nameLabel}
+        required={isRequired}
+      />
       <Styled.Label>{nameLabel}</Styled.Label>
     </Styled.Box>
   );

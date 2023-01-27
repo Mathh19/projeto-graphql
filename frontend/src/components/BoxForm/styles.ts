@@ -4,12 +4,17 @@ export const Box = styled.div`
   ${({ theme }) => css`
     position: relative;
 
-    input:focus ~ label,
-    input:valid ~ label {
+    ${Input}:focus ~ ${Label},
+    ${Input}:not(:placeholder-shown) ~ ${Label} {
       top: -20px;
       left: 0;
       color: ${theme.colors.secondaryColor};
       font-size: 14px;
+    }
+
+    ${Input}:focus,
+    ${Input}:not(:placeholder-shown) {
+      border-bottom: 1px solid ${theme.colors.secondaryColor};
     }
   `}
 `;
@@ -26,9 +31,9 @@ export const Input = styled.input`
     border-bottom: 1px solid ${theme.colors.mediumGray};
     font-size: ${theme.font.sizes.small};
 
-    :focus,
-    :valid {
-      border-bottom: 1px solid ${theme.colors.secondaryColor};
+    &::placeholder{
+      visibility: hidden;
+      opacity: 0;
     }
   `}
 `;
