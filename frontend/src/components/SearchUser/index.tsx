@@ -8,8 +8,18 @@ export const SearchUser = () => {
     <Styled.Container>
       <Title text="Consultar usuário" />
       <Form>
-        <BoxForm nameInput="id" typeInput="text" nameLabel="Id" />
-        <BoxForm nameInput="email" typeInput="email" nameLabel="Email" />
+        <BoxForm
+          nameInput="id"
+          typeInput="text"
+          nameLabel="Id"
+          isRequired={false}
+        />
+        <BoxForm
+          nameInput="email"
+          typeInput="email"
+          nameLabel="Email"
+          isRequired={false}
+        />
         <Styled.Button>Consultar</Styled.Button>
       </Form>
     </Styled.Container>
