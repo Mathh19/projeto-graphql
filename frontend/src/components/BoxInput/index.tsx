@@ -1,18 +1,18 @@
 import * as Styled from './styles';
 
-type BoxFormProps = {
+type BoxInputProps = {
   typeInput: string;
   nameInput: string;
   nameLabel: string;
   isRequired?: boolean;
 };
 
-export const BoxForm = ({
+export const BoxInput = ({
   nameInput,
   typeInput,
   nameLabel,
   isRequired = true,
-}: BoxFormProps) => {
+}: BoxInputProps) => {
   return (
     <Styled.Box>
       <Styled.Input

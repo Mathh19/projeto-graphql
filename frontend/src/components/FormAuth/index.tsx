@@ -1,4 +1,4 @@
-import { BoxForm } from '../BoxForm';
+import { BoxInput } from '../BoxInput';
 import { Form } from '../Form';
 import * as Styled from './styles';
 
@@ -10,10 +10,10 @@ export const FormAuth = ({ session }: FormAuthProps) => {
   return (
     <Form>
       {session === 'register' && (
-        <BoxForm nameInput="name" typeInput="text" nameLabel="Nome" />
+        <BoxInput nameInput="name" typeInput="text" nameLabel="Nome" />
       )}
-      <BoxForm nameInput="email" typeInput="email" nameLabel="Email" />
-      <BoxForm nameInput="password" typeInput="password" nameLabel="Senha" />
+      <BoxInput nameInput="email" typeInput="email" nameLabel="Email" />
+      <BoxInput nameInput="password" typeInput="password" nameLabel="Senha" />
       <Styled.Button>Logar</Styled.Button>
     </Form>
   );

@@ -1,7 +1,7 @@
 import { ListUser } from '../../components/ListUser';
 import { NewUser } from '../../components/NewUser';
 import { Results } from '../../components/Results';
-import { SearchUser } from '../../components/SearchUser';
+import { FilterUser } from '../../components/FilterUser';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
@@ -42,7 +42,7 @@ export const UsersPage = () => {
           <ListUser />
         </Section>
         <Section id="search">
-          <SearchUser />
+          <FilterUser />
           <Results />
         </Section>
         <Section id="add">
