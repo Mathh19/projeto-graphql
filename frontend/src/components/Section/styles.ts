@@ -8,8 +8,8 @@ export const Section = styled.div`
 
 export const Container = styled.div`
   ${({ theme }) => css`
+      width: 100%;
       display: flex;
-      justify-content: space-between;
       gap: 20px;
 
       @media ${theme.media.lteMedium} {
