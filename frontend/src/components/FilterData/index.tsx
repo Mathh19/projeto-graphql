@@ -1,13 +1,16 @@
+import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
 import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
 import { Form } from '../Form';
 import { Title } from '../Title';
 import * as Styled from './styles';
 
-export const FilterUser = () => {
+export const FilterData = ({ userOrProfile }: DataFormComponents) => {
   return (
     <Styled.Container>
-      <Title text="Consultar usuário" />
+      <Title
+        text={`Consultar ${userOrProfile === 'user' ? 'usuário' : 'perfil'}`}
+      />
       <Form>
         <BoxInput
           nameInput="id"

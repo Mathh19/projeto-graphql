@@ -1,10 +1,13 @@
 import { ArrowUpward } from '@styled-icons/material';
+import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
 import * as Styled from './styles';
 
-export const ListUser = () => {
+export const ListData = ({ userOrProfile }: DataFormComponents) => {
   return (
     <Styled.Container>
-      <Styled.Button>Obter Usuários</Styled.Button>
+      <Styled.Button>
+        Obter {`${userOrProfile === 'user' ? 'Usuários' : 'Perfis'}`}
+      </Styled.Button>
       <Styled.Users>
         <button>
           ID
@@ -13,7 +16,7 @@ export const ListUser = () => {
         <Styled.ContainerColumns>
           <p>Nome</p>
           <p>Email</p>
-          <p>Perfis</p>
+          <p>{userOrProfile === 'user' ? 'Perfis' : 'Usuários'}</p>
         </Styled.ContainerColumns>
       </Styled.Users>
       <Styled.DataResults>

@@ -1,12 +1,12 @@
-import { ListUser } from '../../components/ListUser';
-import { NewUser } from '../../components/NewUser';
+import { ListData } from '../../components/ListData';
+import { NewData } from '../../components/NewData';
 import { Results } from '../../components/Results';
-import { FilterUser } from '../../components/FilterUser';
+import { FilterData } from '../../components/FilterData';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
-import { UpdateUser } from '../../components/UpdateUser';
-import { DeleteUser } from '../../components/DeleteUser';
+import { UpdateData } from '../../components/UpdateData';
+import { DeleteData } from '../../components/DeleteData';
 
 export const UsersPage = () => {
   const tabs = [
@@ -41,22 +41,22 @@ export const UsersPage = () => {
     <TabSections tabs={tabs}>
       <Sections>
         <Section id="list">
-          <ListUser />
+          <ListData userOrProfile="user" />
         </Section>
         <Section id="search">
-          <FilterUser />
+          <FilterData userOrProfile="user" />
           <Results />
         </Section>
         <Section id="add">
-          <NewUser />
+          <NewData userOrProfile="user" />
           <Results />
         </Section>
         <Section id="update">
-          <UpdateUser />
+          <UpdateData userOrProfile="user" />
           <Results />
         </Section>
         <Section id="delete">
-          <DeleteUser />
+          <DeleteData userOrProfile="user" />
           <Results />
         </Section>
       </Sections>
