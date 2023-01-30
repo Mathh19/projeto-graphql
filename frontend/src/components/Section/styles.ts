@@ -1,19 +1,14 @@
 import styled, { css } from 'styled-components';
 
 export const Section = styled.div`
-  ${() => css`
-    min-width: 100%;
-  `}
-`;
-
-export const Container = styled.div`
   ${({ theme }) => css`
-      width: 100%;
-      display: flex;
-      gap: 20px;
+    min-width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 0 ${theme.spacings.xlarge};
 
-      @media ${theme.media.lteMedium} {
-        flex-wrap: wrap;
-      }
+    @media ${theme.media.lteMedium} {
+      flex-wrap: wrap;
+    }
   `}
 `;

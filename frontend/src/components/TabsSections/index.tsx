@@ -9,7 +9,7 @@ export const TabSections = ({ tabs, children }: TabSessionProps) => {
   return (
     <Styled.Container>
       <Tabs tabs={tabs} />
-      <Styled.Content>{children}</Styled.Content>
+      {children}
     </Styled.Container>
   );
 };

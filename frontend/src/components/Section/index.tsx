@@ -6,9 +6,5 @@ type SectionProps = {
 };
 
 export const Section = ({ children, id }: SectionProps) => {
-  return (
-    <Styled.Section id={id}>
-      <Styled.Container>{children}</Styled.Container>
-    </Styled.Section>
-  );
+  return <Styled.Section id={id}>{children}</Styled.Section>;
 };

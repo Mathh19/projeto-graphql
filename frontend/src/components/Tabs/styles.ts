@@ -5,6 +5,7 @@ export const Tab = styled.div`
     display: flex;
     justify-content: center;
     gap: ${theme.spacings.huge};
+    margin-bottom: ${theme.spacings.large};
     color: ${theme.colors.white};
     background-color: ${theme.colors.primaryColor};
   `}

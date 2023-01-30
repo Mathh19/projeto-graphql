@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     display: flex;
-    overflow: hidden;
+    gap: 20px;
+    overflow-x: hidden;
   `}
 `;
