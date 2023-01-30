@@ -13,11 +13,18 @@ export const ListData = ({ userOrProfile }: DataFormComponents) => {
           ID
           <ArrowUpward />
         </button>
-        <Styled.ContainerColumns>
-          <p>Nome</p>
-          <p>Email</p>
-          <p>{userOrProfile === 'user' ? 'Perfis' : 'Usuários'}</p>
-        </Styled.ContainerColumns>
+        {userOrProfile === 'user' ? (
+          <Styled.ContainerColumns>
+            <p>Nome</p>
+            <p>Email</p>
+            <p>Perfis</p>
+          </Styled.ContainerColumns>
+        ) : (
+          <Styled.ContainerColumns>
+            <p>Nome</p>
+            <p>Rótulo</p>
+          </Styled.ContainerColumns>
+        )}
       </Styled.Users>
       <Styled.DataResults>
         <p>Not data avaliable.</p>

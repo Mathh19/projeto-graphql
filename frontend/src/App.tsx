@@ -22,7 +22,7 @@ const mainTabs = [
     id: '3',
     svg: <UserCheck />,
     content: 'Perfis',
-    link: '/',
+    link: '/profiles',
   },
 ];
 

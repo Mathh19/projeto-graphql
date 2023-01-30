@@ -11,21 +11,39 @@ export const DeleteData = ({ userOrProfile }: DataFormComponents) => {
       <Title
         text={`Deletar ${userOrProfile === 'user' ? 'Usuário' : 'Perfil'}`}
       />
-      <Form>
-        <BoxInput
-          nameInput="id"
-          typeInput="text"
-          nameLabel="Id"
-          isRequired={false}
-        />
-        <BoxInput
-          nameInput="email"
-          typeInput="email"
-          nameLabel="Email"
-          isRequired={false}
-        />
-        <Button text="Deletar" />
-      </Form>
+      {userOrProfile === 'user' ? (
+        <Form>
+          <BoxInput
+            nameInput="id"
+            typeInput="text"
+            nameLabel="Id"
+            isRequired={false}
+          />
+          <BoxInput
+            nameInput="email"
+            typeInput="email"
+            nameLabel="Email"
+            isRequired={false}
+          />
+          <Button text="Deletar" />
+        </Form>
+      ) : (
+        <Form>
+          <BoxInput
+            nameInput="id"
+            typeInput="text"
+            nameLabel="Id"
+            isRequired={false}
+          />
+          <BoxInput
+            nameInput="name"
+            typeInput="name"
+            nameLabel="Nome"
+            isRequired={false}
+          />
+          <Button text="Deletar" />
+        </Form>
+      )}
     </Styled.Container>
   );
 };

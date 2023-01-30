@@ -7,6 +7,7 @@ import { theme } from './styles/theme';
 import { AuthPage } from './pages/AuthPage';
 import App from './App';
 import { UsersPage } from './pages/Users';
+import { ProfilePage } from './pages/Profiles';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route element={<App />}>
             <Route path="/" element={<AuthPage />} />
             <Route path="/users" element={<UsersPage />} />
+            <Route path="/profiles" element={<ProfilePage />} />
           </Route>
         </Routes>
         <GlobalStyles />
