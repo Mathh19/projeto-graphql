@@ -2,10 +2,10 @@ import { BoxInput } from '../BoxInput';
 import { Form } from '../Form';
 import { Select } from '../Select';
 import { Title } from '../Title';
-import * as Styled from './styles';
-
-import mock from './mock';
 import { Button } from '../Button';
+
+import * as Styled from './styles';
+import mock from './mock';
 
 export const NewUser = () => {
   return (

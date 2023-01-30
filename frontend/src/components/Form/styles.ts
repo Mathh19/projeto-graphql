@@ -5,7 +5,6 @@ export const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: ${theme.spacings.medium};
     color: ${theme.colors.secondaryColor};
   `}
 `;
