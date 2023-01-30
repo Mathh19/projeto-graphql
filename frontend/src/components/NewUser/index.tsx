@@ -5,6 +5,7 @@ import { Title } from '../Title';
 import * as Styled from './styles';
 
 import mock from './mock';
+import { Button } from '../Button';
 
 export const NewUser = () => {
   return (
@@ -15,6 +16,8 @@ export const NewUser = () => {
         <BoxInput nameInput="email" typeInput="email" nameLabel="Email" />
         <BoxInput nameInput="password" typeInput="password" nameLabel="Senha" />
         <Select profiles={mock.data.profiles} />
+        <Button text="Obter Perfis" />
+        <Button text="Novo Usuário" />
       </Form>
     </Styled.Container>
   );

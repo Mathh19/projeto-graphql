@@ -4,7 +4,7 @@ import { Box as BoxInput } from '../BoxInput/styles';
 
 export const Box = styled(BoxInput)`
   ${({ theme }) => css`
-
+    margin-bottom: 20px;
     transition: all ease-in-out 200ms;
     ${MenuList}:focus ~ ${OpenList},
     ${MenuList}:not(:placeholder-shown) ~ ${OpenList},
@@ -40,7 +40,6 @@ export const MenuList = styled.ul<Pick<OpenListProps, 'isOpen'>>`
     color: ${theme.colors.white};
     list-style: none;
     padding-bottom: 10px;
-    margin-bottom: 20px;
     border: none;
     border-bottom: 1px solid ${
       isOpen ? `${theme.colors.mediumGray}` : `${theme.colors.secondaryColor}`
