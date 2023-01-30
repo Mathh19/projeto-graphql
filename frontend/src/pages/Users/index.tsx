@@ -6,6 +6,7 @@ import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
 import { UpdateUser } from '../../components/UpdateUser';
+import { DeleteUser } from '../../components/DeleteUser';
 
 export const UsersPage = () => {
   const tabs = [
@@ -52,6 +53,10 @@ export const UsersPage = () => {
         </Section>
         <Section id="update">
           <UpdateUser />
+          <Results />
+        </Section>
+        <Section id="delete">
+          <DeleteUser />
           <Results />
         </Section>
       </Sections>
