@@ -5,6 +5,7 @@ import { FilterUser } from '../../components/FilterUser';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
+import { UpdateUser } from '../../components/UpdateUser';
 
 export const UsersPage = () => {
   const tabs = [
@@ -47,6 +48,10 @@ export const UsersPage = () => {
         </Section>
         <Section id="add">
           <NewUser />
+          <Results />
+        </Section>
+        <Section id="update">
+          <UpdateUser />
           <Results />
         </Section>
       </Sections>
