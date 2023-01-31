@@ -2,7 +2,7 @@ import * as Styled from './styles';
 
 export type ButtonProps = {
   text: string;
-  warning: boolean;
+  warning?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({ text, warning = false }: ButtonProps) => {
