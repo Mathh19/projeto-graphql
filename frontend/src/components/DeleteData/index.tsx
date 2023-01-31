@@ -25,7 +25,7 @@ export const DeleteData = ({ userOrProfile }: DataFormComponents) => {
             nameLabel="Email"
             isRequired={false}
           />
-          <Button text="Deletar" />
+          <Button warning={true} text="Deletar" />
         </Form>
       ) : (
         <Form>
@@ -41,7 +41,7 @@ export const DeleteData = ({ userOrProfile }: DataFormComponents) => {
             nameLabel="Nome"
             isRequired={false}
           />
-          <Button text="Deletar" />
+          <Button warning={true} text="Deletar" />
         </Form>
       )}
     </Styled.Container>

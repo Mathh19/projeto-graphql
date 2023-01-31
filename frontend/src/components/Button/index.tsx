@@ -1,9 +1,10 @@
 import * as Styled from './styles';
 
-type ButtonProps = {
+export type ButtonProps = {
   text: string;
+  warning: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ text }: ButtonProps) => {
-  return <Styled.Button>{text}</Styled.Button>;
+export const Button = ({ text, warning = false }: ButtonProps) => {
+  return <Styled.Button warning={warning}>{text}</Styled.Button>;
 };
