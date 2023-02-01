@@ -21,7 +21,7 @@ export const Button = styled.button`
   `}
 `;
 
-export const Users = styled.div`
+export const Data = styled.div`
   ${({ theme }) => css`
       display: flex;
       margin-top: 3rem;

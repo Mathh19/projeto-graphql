@@ -2,30 +2,27 @@ import { ArrowUpward } from '@styled-icons/material';
 import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
 import * as Styled from './styles';
 
-export const ListData = ({ userOrProfile }: DataFormComponents) => {
+type ListDataProps = {
+  columns: string[];
+} & DataFormComponents;
+
+export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
   return (
     <Styled.Container>
       <Styled.Button>
         Obter {`${userOrProfile === 'user' ? 'Usuários' : 'Perfis'}`}
       </Styled.Button>
-      <Styled.Users>
+      <Styled.Data>
         <button>
           ID
           <ArrowUpward />
         </button>
-        {userOrProfile === 'user' ? (
-          <Styled.ContainerColumns>
-            <p>Nome</p>
-            <p>Email</p>
-            <p>Perfis</p>
-          </Styled.ContainerColumns>
-        ) : (
-          <Styled.ContainerColumns>
-            <p>Nome</p>
-            <p>Rótulo</p>
-          </Styled.ContainerColumns>
-        )}
-      </Styled.Users>
+        <Styled.ContainerColumns>
+          {columns.map((column) => (
+            <div key={column}>{column}</div>
+          ))}
+        </Styled.ContainerColumns>
+      </Styled.Data>
       <Styled.DataResults>
         <p>Not data avaliable.</p>
       </Styled.DataResults>

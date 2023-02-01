@@ -37,11 +37,13 @@ export const ProfilePage = () => {
     },
   ];
 
+  const columns = ['nome', 'rótulo'];
+
   return (
     <TabSections tabs={tabs}>
       <Sections>
         <Section id="list">
-          <ListData userOrProfile="profile" />
+          <ListData userOrProfile="profile" columns={columns} />
         </Section>
         <Section id="search">
           <FilterData userOrProfile="profile" />
