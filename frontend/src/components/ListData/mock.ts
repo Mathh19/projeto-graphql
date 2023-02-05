@@ -7,6 +7,7 @@ export default {
         email: 'admin@email.com',
         profiles: [
           {
+            id: '1',
             name: 'admin',
           },
         ],
@@ -17,6 +18,7 @@ export default {
         email: 'comum@email.com',
         profiles: [
           {
+            id: '1',
             name: 'comum',
           },
         ],
@@ -27,6 +29,7 @@ export default {
         email: 'math@email.com',
         profiles: [
           {
+            id: '1',
             name: 'comum',
           },
         ],
@@ -37,6 +40,19 @@ export default {
         email: 'leon@email.com',
         profiles: [
           {
+            id: '4',
+            name: 'admin',
+          },
+          {
+            id: '1',
+            name: 'admin',
+          },
+          {
+            id: '2',
+            name: 'admin',
+          },
+          {
+            id: '3',
             name: 'admin',
           },
         ],
@@ -47,6 +63,15 @@ export default {
         email: 'carlos@email.com',
         profiles: [
           {
+            id: '1',
+            name: 'admin',
+          },
+          {
+            id: '2',
+            name: 'admin',
+          },
+          {
+            id: '3',
             name: 'admin',
           },
         ],
