@@ -58,3 +58,13 @@ export const TdData = styled(TD)`
     content: ', ';
   }
 `;
+
+export const NoDataMessage = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    text-align: center;
+    padding: 10px;
+    background-color: ${theme.colors.lightPrimaryColor};
+    border-radius: 5px;
+  `}
+`;

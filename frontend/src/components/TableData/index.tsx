@@ -7,7 +7,7 @@ import {
 import * as Styled from './styles';
 
 type TableDataProps = {
-  data: {
+  data?: {
     users: User[];
     profiles: Profile[];
   };
@@ -15,6 +15,31 @@ type TableDataProps = {
 } & DataFormComponents;
 
 export const TableData = ({ columns, userOrProfile, data }: TableDataProps) => {
+  if (!data) {
+    return (
+      <>
+        <Styled.TableContainer>
+          <Styled.THead>
+            <tr>
+              <Styled.TH>
+                <button>
+                  ID
+                  <ArrowUpward />
+                </button>
+              </Styled.TH>
+              {columns.map((column) => (
+                <Styled.TH key={column}>{column}</Styled.TH>
+              ))}
+            </tr>
+          </Styled.THead>
+        </Styled.TableContainer>
+        <Styled.NoDataMessage>
+          <p>Sem dados.</p>
+        </Styled.NoDataMessage>
+      </>
+    );
+  }
+
   return (
     <Styled.TableContainer>
       <Styled.THead>
