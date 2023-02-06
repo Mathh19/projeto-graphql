@@ -9,6 +9,7 @@ export const theme = {
     mediumGray: '#DDDDDD',
     darkGray: 'rgba(102, 102, 102, 0.27)',
     mainBg: '#12141f',
+    warning: 'crimson',
   },
   font: {
     family: {
