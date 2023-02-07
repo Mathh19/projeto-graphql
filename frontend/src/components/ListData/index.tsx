@@ -18,7 +18,6 @@ export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
   );
 
   if (loading) return <Loading />;
-  if (error) return <ErrorMessage message={`Error : ${error.message}`} />;
 
   const handleClick = () => {
     setUsersProfiles(data);
@@ -26,9 +25,10 @@ export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
 
   return (
     <Styled.Container>
-      <Styled.Button onClick={handleClick}>
+      <Styled.Button onClick={handleClick} disabled={error && true}>
         Obter {`${userOrProfile === 'user' ? 'Usuários' : 'Perfis'}`}
       </Styled.Button>
+      {error && <ErrorMessage message={`Error: ${error.message}`} />}
       <TableData
         columns={columns}
         userOrProfile={userOrProfile}

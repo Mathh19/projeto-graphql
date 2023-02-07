@@ -15,8 +15,13 @@ export const Button = styled.button`
     text-transform: uppercase;
     padding: 10px 20px;
 
-    :hover {
+    :not([disabled]):hover {
       background-color: ${theme.colors.lightSecondaryColor};
+    }
+
+    :disabled {
+      cursor: not-allowed;
+      filter: brightness(60%);
     }
   `}
 `;
