@@ -1,6 +1,6 @@
 import { BoxInput } from '../BoxInput';
 import { Form } from '../Form';
-import { Select } from '../Select';
+import { MultiSelect } from '../MultiSelect';
 import { Title } from '../Title';
 import { Button } from '../Button';
 import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
@@ -21,9 +21,11 @@ export const NewData = ({ userOrProfile }: DataFormComponents) => {
             typeInput="password"
             nameLabel="Senha"
           />
-          <Select profiles={mock.data.profiles} />
-          <Button text="Obter perfis" />
-          <Button text="Novo usuário" />
+          <MultiSelect profiles={mock.data.profiles} />
+          <Styled.ContainerButtons>
+            <Button text="Obter perfis" />
+            <Button text="Novo usuário" />
+          </Styled.ContainerButtons>
         </Form>
       ) : (
         <Form>

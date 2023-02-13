@@ -3,7 +3,7 @@ import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
 import { Form } from '../Form';
 import mock from '../NewData/mock';
-import { Select } from '../Select';
+import { MultiSelect } from '../MultiSelect';
 import { Title } from '../Title';
 import * as Styled from './styles';
 
@@ -36,9 +36,11 @@ export const UpdateData = ({ userOrProfile }: DataFormComponents) => {
             typeInput="password"
             nameLabel="Senha"
           />
-          <Select profiles={mock.data.profiles} />
-          <Button text="Obter perfis" />
-          <Button text="Alterar usuário" />
+          <MultiSelect profiles={mock.data.profiles} />
+          <Styled.ContainerButton>
+            <Button text="Obter perfis" />
+            <Button text="Alterar usuário" />
+          </Styled.ContainerButton>
         </Form>
       ) : (
         <Form>

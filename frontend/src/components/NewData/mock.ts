@@ -16,6 +16,26 @@ export default {
         name: 'cadastrador',
         label: 'Cadastrador',
       },
+      {
+        id: 3,
+        name: 'cadastrador',
+        label: 'Cadastrador',
+      },
+      {
+        id: 3,
+        name: 'cadastrador',
+        label: 'Cadastrador',
+      },
+      {
+        id: 3,
+        name: 'cadastrador',
+        label: 'Cadastrador',
+      },
+      {
+        id: 3,
+        name: 'cadastrador',
+        label: 'Cadastrador',
+      },
     ],
   },
 };
