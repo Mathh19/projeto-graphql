@@ -3,7 +3,7 @@ export type DataFormComponents = {
 };
 
 export type Profile = {
-  id: string;
+  id: string | number;
   name: string;
   label: string;
 };
