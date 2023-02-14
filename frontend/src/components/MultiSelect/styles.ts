@@ -63,5 +63,9 @@ export const CustomSelect = styled(Select)`
     .Select__option:hover {
       background-color: ${theme.colors.lightPrimaryColor};
     }
+
+    .Select__input-container {
+      color: ${theme.colors.white};
+    }
   `}
 `;
