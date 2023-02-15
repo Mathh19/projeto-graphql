@@ -4,11 +4,17 @@ import { MultiSelect } from '../MultiSelect';
 import { Title } from '../Title';
 import { Button } from '../Button';
 import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
+import { useQuery } from '@apollo/client';
+import { GET_PROFILES } from '../../graphql/querys';
 
 import * as Styled from './styles';
-import mock from './mock';
+import { Loading } from '../Loading';
 
 export const NewData = ({ userOrProfile }: DataFormComponents) => {
+  const { data, loading } = useQuery(GET_PROFILES);
+
+  if (loading) return <Loading />;
+
   return (
     <Styled.Container>
       <Title text={`Novo ${userOrProfile === 'user' ? 'Usuário' : 'Perfil'}`} />
@@ -21,9 +27,8 @@ export const NewData = ({ userOrProfile }: DataFormComponents) => {
             typeInput="password"
             nameLabel="Senha"
           />
-          <MultiSelect profiles={mock.data.profiles} />
+          <MultiSelect profiles={data === undefined ? [] : data.profiles} />
           <Styled.ContainerButtons>
-            <Button text="Obter perfis" />
             <Button text="Novo usuário" />
           </Styled.ContainerButtons>
         </Form>
