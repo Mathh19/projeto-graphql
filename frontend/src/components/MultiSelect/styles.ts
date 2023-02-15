@@ -33,6 +33,27 @@ export const CustomSelect = styled(Select)`
       background: ${theme.colors.primaryColor};
     }
 
+    .Select__menu-list {
+      scrollbar-width: thin;
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: ${theme.colors.lightPrimaryColor};
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: ${theme.colors.lightSecondaryColor};
+      }
+    }
+
     .Select__multi-value {
       background-color: ${theme.colors.lightPrimaryColor};
     }

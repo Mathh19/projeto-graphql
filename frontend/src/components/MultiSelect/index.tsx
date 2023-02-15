@@ -8,6 +8,9 @@ type SelectProps = {
 export const MultiSelect = ({ profiles }: SelectProps) => {
   return (
     <Styled.CustomSelect
+      captureMenuScroll={false}
+      maxMenuHeight={100}
+      menuPosition="fixed"
       isMulti
       classNamePrefix={'Select'}
       options={profiles.map((profile) => ({
