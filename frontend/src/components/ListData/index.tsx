@@ -13,6 +13,7 @@ type ListDataProps = {
 
 export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
   const [usersProfiles, setUsersProfiles] = useState();
+  const [closeData, setCloseData] = useState(false);
   const { data, loading, error } = useQuery(
     userOrProfile === 'user' ? GET_USERS : GET_PROFILES,
   );
@@ -21,12 +22,18 @@ export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
 
   const handleClick = () => {
     setUsersProfiles(data);
+    setCloseData(!closeData);
+    if (closeData) {
+      setUsersProfiles(undefined);
+    }
   };
 
   return (
     <Styled.Container>
       <Styled.Button onClick={handleClick} disabled={error && true}>
-        Obter {`${userOrProfile === 'user' ? 'Usuários' : 'Perfis'}`}
+        {closeData
+          ? 'X'
+          : `Obter ${userOrProfile === 'user' ? 'Usuários' : 'Perfis'}`}
       </Styled.Button>
       {error && <ErrorMessage message={`Error: ${error.message}`} />}
       <TableData
