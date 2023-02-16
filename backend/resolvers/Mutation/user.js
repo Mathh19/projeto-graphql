@@ -48,7 +48,7 @@ const mutations = {
       return db('users')
         .where({ id }).first();
     } catch (err) {
-      throw new Error(err);
+      throw new Error('Usuário já registrado.');
     }
   },
   async deleteUser(_, args, ctx) {
