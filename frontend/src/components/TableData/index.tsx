@@ -1,9 +1,5 @@
 import { ArrowUpward } from '@styled-icons/material';
-import {
-  DataFormComponents,
-  Profile,
-  User,
-} from '../../sharedTypes/dataFormComponents';
+import { ComponentData, Profile, User } from '../../sharedTypes/componentData';
 import * as Styled from './styles';
 
 type TableDataProps = {
@@ -12,7 +8,7 @@ type TableDataProps = {
     profiles: Profile[];
   };
   columns: string[];
-} & DataFormComponents;
+} & ComponentData;
 
 export const TableData = ({ columns, userOrProfile, data }: TableDataProps) => {
   if (!data) {

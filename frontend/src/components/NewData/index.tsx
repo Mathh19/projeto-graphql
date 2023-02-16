@@ -3,14 +3,14 @@ import { Form } from '../Form';
 import { MultiSelect } from '../MultiSelect';
 import { Title } from '../Title';
 import { Button } from '../Button';
-import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
+import { ComponentData } from '../../sharedTypes/componentData';
 import { useQuery } from '@apollo/client';
 import { GET_PROFILES } from '../../graphql/querys';
 
 import * as Styled from './styles';
 import { Loading } from '../Loading';
 
-export const NewData = ({ userOrProfile }: DataFormComponents) => {
+export const NewData = ({ userOrProfile }: ComponentData) => {
   const { data, loading } = useQuery(GET_PROFILES);
 
   if (loading) return <Loading />;

@@ -1,4 +1,4 @@
-import { Profile } from '../../sharedTypes/dataFormComponents';
+import { Profile } from '../../sharedTypes/componentData';
 import * as Styled from './styles';
 
 type SelectProps = {

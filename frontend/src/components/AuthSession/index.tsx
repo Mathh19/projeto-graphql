@@ -2,11 +2,11 @@ import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
 import { Form } from '../Form';
 
-export type FormAuthProps = {
+export type AuthSessionProps = {
   session: 'register' | 'login';
 };
 
-export const FormAuth = ({ session }: FormAuthProps) => {
+export const AuthSession = ({ session }: AuthSessionProps) => {
   return (
     <Form>
       {session === 'register' && (

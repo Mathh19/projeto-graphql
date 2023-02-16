@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { GET_PROFILES } from '../../graphql/querys';
-import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
+import { ComponentData } from '../../sharedTypes/componentData';
 import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
 import { Form } from '../Form';
@@ -10,7 +10,7 @@ import { Title } from '../Title';
 
 import * as Styled from './styles';
 
-export const UpdateData = ({ userOrProfile }: DataFormComponents) => {
+export const UpdateData = ({ userOrProfile }: ComponentData) => {
   const { data, loading } = useQuery(GET_PROFILES);
 
   if (loading) return <Loading />;

@@ -1,4 +1,4 @@
-import { FormAuth } from '../../components/FormAuth';
+import { AuthSession } from '../../components/AuthSession';
 import { Results } from '../../components/Results';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
@@ -26,14 +26,14 @@ export const AuthPage = () => {
         <Section id="register">
           <Styled.Wrapper>
             <Title text="Cadastrar" />
-            <FormAuth session="register" />
+            <AuthSession session="register" />
           </Styled.Wrapper>
           <Results />
         </Section>
         <Section id="login">
           <Styled.Wrapper>
             <Title text="Login" />
-            <FormAuth session="login" />
+            <AuthSession session="login" />
           </Styled.Wrapper>
           <Results />
         </Section>

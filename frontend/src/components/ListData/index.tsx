@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 import { GET_PROFILES, GET_USERS } from '../../graphql/querys';
-import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
+import { ComponentData } from '../../sharedTypes/componentData';
 import { ErrorMessage } from '../ErrorMessage';
 import { Loading } from '../Loading';
 import { TableData } from '../TableData';
@@ -9,7 +9,7 @@ import * as Styled from './styles';
 
 type ListDataProps = {
   columns: string[];
-} & DataFormComponents;
+} & ComponentData;
 
 export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
   const [usersProfiles, setUsersProfiles] = useState();

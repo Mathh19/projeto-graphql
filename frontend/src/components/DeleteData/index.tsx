@@ -1,11 +1,11 @@
-import { DataFormComponents } from '../../sharedTypes/dataFormComponents';
+import { ComponentData } from '../../sharedTypes/componentData';
 import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
 import { Form } from '../Form';
 import { Title } from '../Title';
 import * as Styled from './styles';
 
-export const DeleteData = ({ userOrProfile }: DataFormComponents) => {
+export const DeleteData = ({ userOrProfile }: ComponentData) => {
   return (
     <Styled.Container>
       <Title

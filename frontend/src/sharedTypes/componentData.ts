@@ -1,4 +1,4 @@
-export type DataFormComponents = {
+export type ComponentData = {
   userOrProfile: 'user' | 'profile';
 };
 
