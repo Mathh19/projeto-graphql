@@ -5,6 +5,7 @@ type BoxInputProps = {
   nameInput: string;
   nameLabel: string;
   isRequired?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const BoxInput = ({
@@ -12,6 +13,7 @@ export const BoxInput = ({
   typeInput,
   nameLabel,
   isRequired = true,
+  onChange,
 }: BoxInputProps) => {
   return (
     <Styled.Box>
@@ -20,6 +22,7 @@ export const BoxInput = ({
         name={nameInput}
         placeholder={nameLabel}
         required={isRequired}
+        onChange={onChange}
       />
       <Styled.Label>{nameLabel}</Styled.Label>
     </Styled.Box>
