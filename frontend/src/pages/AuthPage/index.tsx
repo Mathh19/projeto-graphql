@@ -1,10 +1,7 @@
-import { AuthSession } from '../../components/AuthSession';
-import { Results } from '../../components/Results';
-import { Section } from '../../components/Section';
+import { LoginUser } from '../../components/LoginUser';
+import { RegisterUser } from '../../components/RegisterUser';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
-import { Title } from '../../components/Title';
-import * as Styled from './styles';
 
 export const AuthPage = () => {
   const tabs = [
@@ -23,20 +20,8 @@ export const AuthPage = () => {
   return (
     <TabSections tabs={tabs}>
       <Sections>
-        <Section id="register">
-          <Styled.Wrapper>
-            <Title text="Cadastrar" />
-            <AuthSession session="register" />
-          </Styled.Wrapper>
-          <Results />
-        </Section>
-        <Section id="login">
-          <Styled.Wrapper>
-            <Title text="Login" />
-            <AuthSession session="login" />
-          </Styled.Wrapper>
-          <Results />
-        </Section>
+        <RegisterUser />
+        <LoginUser />
       </Sections>
     </TabSections>
   );
