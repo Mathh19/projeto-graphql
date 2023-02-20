@@ -1,6 +1,5 @@
 import { ListData } from '../../components/ListData';
 import { NewData } from '../../components/NewData';
-import { Results } from '../../components/Results';
 import { FilterData } from '../../components/FilterData';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
@@ -45,22 +44,10 @@ export const ProfilePage = () => {
         <Section id="list">
           <ListData userOrProfile="profile" columns={columns} />
         </Section>
-        <Section id="search">
-          <FilterData userOrProfile="profile" />
-          <Results />
-        </Section>
-        <Section id="add">
-          <NewData userOrProfile="profile" />
-          <Results />
-        </Section>
-        <Section id="update">
-          <UpdateData userOrProfile="profile" />
-          <Results />
-        </Section>
-        <Section id="delete">
-          <DeleteData userOrProfile="profile" />
-          <Results />
-        </Section>
+        <FilterData userOrProfile="profile" />
+        <NewData userOrProfile="profile" />
+        <UpdateData userOrProfile="profile" />
+        <DeleteData userOrProfile="profile" />
       </Sections>
     </TabSections>
   );
