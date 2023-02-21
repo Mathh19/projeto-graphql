@@ -28,12 +28,7 @@ export const RegisterUser = () => {
     profiles: undefined,
   });
   const [registerUser, { error }] = useMutation(REGISTER_USER);
-  const dataUserRef = useRef({
-    name: '',
-    email: '',
-    password: '',
-    profiles: undefined,
-  } as User);
+  const dataUserRef = useRef<User>();
 
   const handleRegisterSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -75,7 +70,7 @@ export const RegisterUser = () => {
         </Form>
       </Wrapper>
       <Results>
-        {dataUserRef !== undefined && (
+        {dataUserRef.current !== undefined && (
           <Styled.ContainerResults>
             <h3>Nome</h3>
             <p>{dataUserRef.current.name}</p>
