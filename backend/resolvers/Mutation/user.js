@@ -1,9 +1,27 @@
 const bcrypt = require('bcrypt');
 const db = require('../../config/db');
+const { getUserLogged } = require('../common/user');
 const { profile: findProfile } = require('../Query/profile');
 const { user: findUser } = require('../Query/user');
 
 const mutations = {
+  async login(_, { data }) {
+    const user = await db('users')
+      .where({ email: data.email })
+      .first();
+
+    if(!user) {
+      throw new Error('Usuário/Senha inválido');
+    }
+
+    const isEqual = bcrypt.compareSync(data.password, user.password);
+
+    if(!isEqual) {
+      throw new Error('Senha inválida');
+    }
+
+    return getUserLogged(user);
+  },
   async registerUser(_, { data }) {
     return mutations.newUser(_, {
       data: {

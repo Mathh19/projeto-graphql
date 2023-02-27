@@ -48,7 +48,6 @@ input ProfileFilter {
 }
 
 type Query {
-  login(data: UserLoginInput!): User
   users: [User]
   user(filter: UserFilter!): User
   profiles: [Profile]
@@ -59,6 +58,8 @@ type Mutation {
   registerUser(
     data: UserRegisterInput!
   ): User!
+
+  login(data: UserLoginInput!): User
 
   newUser(
       data: UserInput!
