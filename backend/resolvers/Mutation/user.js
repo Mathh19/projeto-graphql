@@ -5,7 +5,7 @@ const { profile: findProfile } = require('../Query/profile');
 const { user: findUser } = require('../Query/user');
 
 const mutations = {
-  async login(_, { data }) {
+  async loginUser(_, { data }) {
     const user = await db('users')
       .where({ email: data.email })
       .first();

@@ -59,7 +59,7 @@ type Mutation {
     data: UserRegisterInput!
   ): User!
 
-  login(data: UserLoginInput!): User
+  loginUser(data: UserLoginInput!): User
 
   newUser(
       data: UserInput!
