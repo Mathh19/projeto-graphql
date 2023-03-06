@@ -20,7 +20,7 @@ const mutations = {
       throw new Error('Senha inválida');
     }
 
-    return getUserLogged(user);
+    return await getUserLogged(user);
   },
   async registerUser(_, { data }) {
     return mutations.newUser(_, {
