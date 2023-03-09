@@ -4,6 +4,9 @@ import { Fingerprint } from '@styled-icons/material';
 import { Outlet } from 'react-router-dom';
 import { Bar } from './components/Bar';
 import { Navbar } from './components/Navbar';
+import { useContext } from 'react';
+import { AuthContext } from './contexts/AuthContext';
+import { Logged } from './components/Logged';
 
 const mainTabs = [
   {
@@ -27,9 +30,11 @@ const mainTabs = [
 ];
 
 function App() {
+  const context = useContext(AuthContext);
   return (
     <div className="App">
       <Bar />
+      {context.loginUser && <Logged />}
       <Navbar tabs={mainTabs} />
       <Outlet />
     </div>
