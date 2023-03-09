@@ -6,6 +6,6 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     color: ${theme.colors.secondaryColor};
-    padding: ${theme.spacings.xsmall};
+    padding: ${theme.spacings.small};
   `}
 `;
