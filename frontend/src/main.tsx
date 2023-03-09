@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/global-styles';
 import { theme } from './styles/theme';
@@ -10,22 +10,29 @@ import { client } from './graphql/client';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { AuthProvider } from './contexts/AuthContext';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      { path: '/', element: <AuthPage /> },
+      { path: '/users', element: <UsersPage /> },
+      { path: '/profiles', element: <ProfilePage /> },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <ApolloProvider client={client}>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<App />}>
-              <Route path="/" element={<AuthPage />} />
-              <Route path="/users" element={<UsersPage />} />
-              <Route path="/profiles" element={<ProfilePage />} />
-            </Route>
-          </Routes>
+      <AuthProvider>
+        <ApolloProvider client={client}>
+          <RouterProvider router={router} />
           <GlobalStyles />
-        </BrowserRouter>
-      </ApolloProvider>
+        </ApolloProvider>
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );
