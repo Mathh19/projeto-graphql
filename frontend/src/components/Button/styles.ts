@@ -16,7 +16,6 @@ export const Button = styled.button<Pick<ButtonProps, 'warning'>>`
       !warning ? theme.colors.secondaryColor : theme.colors.warning
     };
     transition: .5s;
-    margin-bottom: 15px;
 
     :hover {
       color: ${!warning ? theme.colors.secondaryColor : theme.colors.warning};;

@@ -5,6 +5,10 @@ export type ButtonProps = {
   warning?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ text, warning = false }: ButtonProps) => {
-  return <Styled.Button warning={warning}>{text}</Styled.Button>;
+export const Button = ({ text, warning = false, onClick }: ButtonProps) => {
+  return (
+    <Styled.Button onClick={onClick} warning={warning}>
+      {text}
+    </Styled.Button>
+  );
 };
