@@ -16,6 +16,7 @@ export const ListData = ({ columns, userOrProfile }: ListDataProps) => {
   const [closeData, setCloseData] = useState(false);
   const { data, loading, error } = useQuery(
     userOrProfile === 'user' ? GET_USERS : GET_PROFILES,
+    { fetchPolicy: 'no-cache' },
   );
 
   if (loading) return <Loading />;
