@@ -65,7 +65,7 @@ export const LoginUser = () => {
       <Results>
         {loggedUser && (
           <Styled.ContainerResults>
-            <h2>Você está logado com a conta</h2>
+            <h2>Você acessou a conta</h2>
             <h3>Nome</h3>
             <p>{loggedUser.name}</p>
             <h3>Email</h3>
