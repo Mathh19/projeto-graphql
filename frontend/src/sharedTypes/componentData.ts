@@ -6,6 +6,7 @@ export type Profile = {
   id: string | number;
   name: string;
   label: string;
+  users: User[];
 };
 
 export type User = {
