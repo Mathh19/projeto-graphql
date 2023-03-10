@@ -9,7 +9,7 @@ export const Results = ({ children }: ResultsProps) => {
   return (
     <Styled.Container>
       <Title text="Resultado" />
-      {children}
+      <Styled.ContainerResults>{children}</Styled.ContainerResults>
     </Styled.Container>
   );
 };
