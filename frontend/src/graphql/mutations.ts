@@ -20,5 +20,5 @@ export const LOGIN_USER = gql`
       email
       token
     }
-}
+  }
 `;
