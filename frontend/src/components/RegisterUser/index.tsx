@@ -11,8 +11,6 @@ import { Section } from '../Section';
 import { Title } from '../Title';
 import { Wrapper } from '../Wrapper';
 
-import * as Styled from './styles';
-
 type User = {
   name: string;
   email: string;
@@ -71,7 +69,7 @@ export const RegisterUser = () => {
       </Wrapper>
       <Results>
         {dataUserRef.current !== undefined && (
-          <Styled.ContainerResults>
+          <>
             <h3>Nome</h3>
             <p>{dataUserRef.current.name}</p>
             <h3>Email</h3>
@@ -81,7 +79,7 @@ export const RegisterUser = () => {
               dataUserRef.current.profiles.map((profile, index) => (
                 <p key={index}>{profile.label}</p>
               ))}
-          </Styled.ContainerResults>
+          </>
         )}
       </Results>
     </Section>

@@ -11,8 +11,6 @@ import { Section } from '../Section';
 import { Title } from '../Title';
 import { Wrapper } from '../Wrapper';
 
-import * as Styled from './styles';
-
 type UserLogin = {
   email: string;
   password: string;
@@ -64,13 +62,13 @@ export const LoginUser = () => {
       </Wrapper>
       <Results>
         {loggedUser && (
-          <Styled.ContainerResults>
-            <h2>Você acessou a conta</h2>
+          <>
+            <h2>Você está acessando a conta</h2>
             <h3>Nome</h3>
             <p>{loggedUser.name}</p>
             <h3>Email</h3>
             <p>{loggedUser.email}</p>
-          </Styled.ContainerResults>
+          </>
         )}
       </Results>
     </Section>
