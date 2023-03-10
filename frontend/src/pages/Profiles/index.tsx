@@ -1,11 +1,11 @@
 import { ListData } from '../../components/ListData';
 import { NewData } from '../../components/NewData';
-import { FilterData } from '../../components/FilterData';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
 import { UpdateData } from '../../components/UpdateData';
 import { DeleteData } from '../../components/DeleteData';
+import { FilterProfile } from '../../components/FilterProfile';
 
 export const ProfilePage = () => {
   const tabs = [
@@ -44,7 +44,7 @@ export const ProfilePage = () => {
         <Section id="list">
           <ListData userOrProfile="profile" columns={columns} />
         </Section>
-        <FilterData userOrProfile="profile" />
+        <FilterProfile />
         <NewData userOrProfile="profile" />
         <UpdateData userOrProfile="profile" />
         <DeleteData userOrProfile="profile" />

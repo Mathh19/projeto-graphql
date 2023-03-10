@@ -1,6 +1,6 @@
 import { ListData } from '../../components/ListData';
 import { NewData } from '../../components/NewData';
-import { FilterData } from '../../components/FilterData';
+import { FilterUser } from '../../components/FilterUser';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
@@ -44,7 +44,7 @@ export const UsersPage = () => {
         <Section id="list">
           <ListData userOrProfile="user" columns={columns} />
         </Section>
-        <FilterData userOrProfile="user" />
+        <FilterUser />
         <NewData userOrProfile="user" />
         <UpdateData userOrProfile="user" />
         <DeleteData userOrProfile="user" />
