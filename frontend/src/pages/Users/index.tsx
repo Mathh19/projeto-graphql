@@ -1,5 +1,5 @@
 import { ListData } from '../../components/ListData';
-import { NewData } from '../../components/NewData';
+import { NewUser } from '../../components/NewUser';
 import { FilterUser } from '../../components/FilterUser';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
@@ -45,7 +45,7 @@ export const UsersPage = () => {
           <ListData userOrProfile="user" columns={columns} />
         </Section>
         <FilterUser />
-        <NewData userOrProfile="user" />
+        <NewUser />
         <UpdateData userOrProfile="user" />
         <DeleteData userOrProfile="user" />
       </Sections>

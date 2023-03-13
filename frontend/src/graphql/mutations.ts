@@ -22,3 +22,15 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const NEW_USER = gql`
+  mutation NewUser($data: UserInput!) {
+    newUser(data: $data) {
+      email
+      name
+      profiles {
+        label
+      }
+    }
+  }
+`;
