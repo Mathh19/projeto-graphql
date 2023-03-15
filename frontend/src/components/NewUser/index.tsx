@@ -106,9 +106,9 @@ export const NewUser = () => {
         </Form>
       </Wrapper>
       <Results>
-        <h2>Novo usuário adicionado</h2>
         {userData !== undefined && (
           <>
+            <h2>Novo usuário adicionado</h2>
             <h3>Nome</h3>
             <p>{userData.newUser.name}</p>
             <h3>Email</h3>
