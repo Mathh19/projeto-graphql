@@ -4,8 +4,8 @@ import { FilterUser } from '../../components/FilterUser';
 import { Section } from '../../components/Section';
 import { Sections } from '../../components/Sections';
 import { TabSections } from '../../components/TabsSections';
-import { DeleteData } from '../../components/DeleteData';
 import { UpdateUser } from '../../components/UpdateUser';
+import { DeleteUser } from '../../components/DeleteUser';
 
 export const UsersPage = () => {
   const tabs = [
@@ -47,7 +47,7 @@ export const UsersPage = () => {
         <FilterUser />
         <NewUser />
         <UpdateUser />
-        <DeleteData userOrProfile="user" />
+        <DeleteUser />
       </Sections>
     </TabSections>
   );
