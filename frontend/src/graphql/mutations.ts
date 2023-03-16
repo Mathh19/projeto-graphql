@@ -48,3 +48,13 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+export const DELETE_USER = gql`
+  mutation DeleteUser($filter: UserFilter!) {
+    deleteUser(filter: $filter) {
+      id
+      email
+      name
+    }
+  }
+`;
