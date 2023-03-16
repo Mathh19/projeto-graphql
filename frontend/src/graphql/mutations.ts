@@ -34,3 +34,17 @@ export const NEW_USER = gql`
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation UpdateUser($filter: UserFilter!, $data: UserInput!) {
+    updateUser(filter: $filter, data: $data) {
+      id
+      email
+      name
+      profiles {
+        id
+        label
+      }
+    }
+  }
+`;
