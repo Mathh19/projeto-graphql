@@ -99,6 +99,8 @@ export const UpdateProfile = () => {
           <>
             <h2>Perfil atualizado</h2>
             <h3>Nome</h3>
+            <p>{data.updateProfile.name}</p>
+            <h3>Rótulo</h3>
             <p>{data.updateProfile.label}</p>
             {data.updateProfile.users.length === 0 ? (
               <h2>Sem usuários relacionado com esse perfil</h2>
