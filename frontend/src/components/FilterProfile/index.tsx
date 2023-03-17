@@ -1,35 +1,26 @@
 import { useLazyQuery } from '@apollo/client';
 import { useState } from 'react';
 import { GET_PROFILE } from '../../graphql/querys';
-import { Profile } from '../../sharedTypes/componentData';
 import { BoxInput } from '../BoxInput';
 import { Button } from '../Button';
+import { DataContainer } from '../DataContainer';
 import { ErrorMessage } from '../ErrorMessage';
 import { Results } from '../Results';
 import { Section } from '../Section';
 import { Title } from '../Title';
 import { Wrapper } from '../Wrapper';
 
-import * as Styled from './styles';
-
-type DataFilterProfileProps = {
-  profile: Profile;
-};
-
 export const FilterProfile = () => {
   const [filterProfile, setFilterProfile] = useState({
     id: '',
     name: '',
   });
-  const [loadData, { data, error }] = useLazyQuery<DataFilterProfileProps>(
-    GET_PROFILE,
-    {
-      variables: {
-        filter: { id: parseInt(filterProfile.id), name: filterProfile.name },
-      },
-      fetchPolicy: 'no-cache',
+  const [loadData, { data, error }] = useLazyQuery(GET_PROFILE, {
+    variables: {
+      filter: { id: parseInt(filterProfile.id), name: filterProfile.name },
     },
-  );
+    fetchPolicy: 'no-cache',
+  });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -67,14 +58,7 @@ export const FilterProfile = () => {
             {data.profile.users.length === 0 ? (
               <h2>Sem usuários para esse perfil</h2>
             ) : (
-              data.profile.users.map((user) => (
-                <Styled.BoxUsers key={user.id}>
-                  <div>
-                    <p>{user.name}</p>
-                    <p>{user.email}</p>
-                  </div>
-                </Styled.BoxUsers>
-              ))
+              <DataContainer userOrProfile="profile" data={data.profile} />
             )}
           </>
         )}

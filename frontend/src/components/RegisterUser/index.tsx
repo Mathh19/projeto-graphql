@@ -76,8 +76,8 @@ export const RegisterUser = () => {
             <p>{dataUserRef.current.email}</p>
             <h3>Perfis</h3>
             {dataUserRef.current.profiles &&
-              dataUserRef.current.profiles.map((profile, index) => (
-                <p key={index}>{profile.label}</p>
+              dataUserRef.current.profiles.map((profile) => (
+                <p key={profile.id}>{profile.label}</p>
               ))}
           </>
         )}

@@ -12,8 +12,8 @@ import { Results } from '../Results';
 import { NEW_USER } from '../../graphql/mutations';
 
 import * as Styled from './styles';
-import { Profile } from '../../sharedTypes/componentData';
 import { ErrorMessage } from '../ErrorMessage';
+import { DataContainer } from '../DataContainer';
 
 type FormStateProps = {
   email: string;
@@ -114,15 +114,7 @@ export const NewUser = () => {
             <h3>Email</h3>
             <p>{userData.newUser.email}</p>
             <h3>Perfis</h3>
-            {userData.newUser.profiles.map(
-              (profile: Profile, index: number) => (
-                <Styled.BoxProfiles key={index}>
-                  <div>
-                    <p>{profile.label}</p>
-                  </div>
-                </Styled.BoxProfiles>
-              ),
-            )}
+            <DataContainer userOrProfile="user" data={userData.newUser} />
           </>
         )}
       </Results>

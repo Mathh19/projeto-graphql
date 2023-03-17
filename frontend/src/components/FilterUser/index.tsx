@@ -7,21 +7,16 @@ import { Results } from '../Results';
 import { Section } from '../Section';
 import { Title } from '../Title';
 import { Wrapper } from '../Wrapper';
-import { User } from '../../sharedTypes/componentData';
 import { ErrorMessage } from '../ErrorMessage';
 
-import * as Styled from './styles';
-
-type DataFilterProps = {
-  user: User;
-};
+import { DataContainer } from '../DataContainer';
 
 export const FilterUser = () => {
   const [filterUser, setFilterUser] = useState({
     id: '',
     email: '',
   });
-  const [loadData, { data, error }] = useLazyQuery<DataFilterProps>(GET_USER, {
+  const [loadData, { data, error }] = useLazyQuery(GET_USER, {
     variables: {
       filter: { id: parseInt(filterUser.id), email: filterUser.email },
     },
@@ -63,13 +58,7 @@ export const FilterUser = () => {
             <h3>Nome</h3>
             <p>{data?.user.name}</p>
             <h3>Perfis</h3>
-            {data?.user.profiles.map((profile) => (
-              <Styled.BoxProfiles key={profile.id}>
-                <div>
-                  <p>{profile.label}</p>
-                </div>
-              </Styled.BoxProfiles>
-            ))}
+            <DataContainer userOrProfile="user" data={data.user} />
           </>
         )}
       </Results>
