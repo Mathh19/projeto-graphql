@@ -83,3 +83,13 @@ export const UPDATE_PROFILE = gql`
     }
   }
 `;
+
+export const DELETE_PROFILE = gql`
+  mutation DeleteProfile($filter: ProfileFilter!) {
+    deleteProfile(filter: $filter) {
+      id
+      name
+      label
+    }
+  }
+`;
