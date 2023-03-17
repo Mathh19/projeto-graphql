@@ -68,3 +68,18 @@ export const NEW_PROFILE = gql`
     }
   }
 `;
+
+export const UPDATE_PROFILE = gql`
+  mutation UpdateProfile($filter: ProfileFilter!, $data: ProfileInput!) {
+    updateProfile(filter: $filter, data: $data) {
+      id
+      name
+      label
+      users {
+        id
+        name
+        email
+      }
+    }
+  }
+`;
