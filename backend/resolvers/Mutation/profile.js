@@ -12,7 +12,7 @@ module.exports = {
         .where({ id })
         .first();
     } catch (err) {
-      throw new Error(err.sqlMessage);
+      throw new Error('Já existe um perfil com esses dados');
     }
   },
   async deleteProfile(_, args, ctx) {
