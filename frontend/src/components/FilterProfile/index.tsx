@@ -33,7 +33,7 @@ export const FilterProfile = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFilterProfile((prevUser) => ({ ...prevUser, [name]: value }));
+    setFilterProfile((prevProfile) => ({ ...prevProfile, [name]: value }));
   };
 
   return (

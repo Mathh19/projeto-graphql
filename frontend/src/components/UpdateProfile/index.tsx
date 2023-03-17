@@ -21,7 +21,7 @@ type FilterProps = {
 };
 
 export const UpdateProfile = () => {
-  const [filter, setFilterUser] = useState<FilterProps>();
+  const [filter, setFilterProfile] = useState<FilterProps>();
   const [formState, setFormState] = useState<FormStateProps>();
   const filterID = filter?.id !== undefined ? parseInt(filter?.id) : undefined;
   const [updateProfile, { data }] = useMutation(UPDATE_PROFILE, {
@@ -51,7 +51,7 @@ export const UpdateProfile = () => {
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFilterUser((prevState) => ({
+    setFilterProfile((prevState) => ({
       ...prevState,
       [name]: value,
     }));
