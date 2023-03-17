@@ -44,7 +44,7 @@ export const DeleteProfile = () => {
           />
           <BoxInput
             nameInput="name"
-            typeInput="name"
+            typeInput="text"
             nameLabel="Nome"
             isRequired={false}
             onChange={handleInputChange}
