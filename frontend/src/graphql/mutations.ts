@@ -58,3 +58,13 @@ export const DELETE_USER = gql`
     }
   }
 `;
+
+export const NEW_PROFILE = gql`
+  mutation NewProfile($data: ProfileInput!) {
+    newProfile(data: $data) {
+      id
+      name
+      label
+    }
+  }
+`;

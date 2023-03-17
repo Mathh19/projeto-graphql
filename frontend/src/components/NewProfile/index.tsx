@@ -6,34 +6,83 @@ import { useMutation } from '@apollo/client';
 import { Wrapper } from '../Wrapper';
 import { Section } from '../Section';
 import { Results } from '../Results';
+import { NEW_PROFILE } from '../../graphql/mutations';
+import { useState } from 'react';
+import { ErrorMessage } from '../ErrorMessage';
 
-import { NEW_USER } from '../../graphql/mutations';
+type NewProfileProps = {
+  newProfile: {
+    id: number;
+    name: string;
+    label: string;
+  };
+};
 
 export const NewProfile = () => {
-  const [newProfile, { data: userData, error }] = useMutation(NEW_USER, {
-    variables: {
-      data: {
-        email: 'newuser@email.com',
-        name: 'New User',
-        password: '123',
+  const initialState = {
+    name: '',
+    label: '',
+  };
+
+  const [formState, setFormState] = useState(initialState);
+
+  const [newProfile, { data, error }] = useMutation<NewProfileProps>(
+    NEW_PROFILE,
+    {
+      variables: {
+        data: {
+          ...formState,
+        },
       },
     },
-  });
-  console.log(userData);
-  console.log(error);
+  );
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    newProfile();
+  };
 
   return (
     <Section id="add">
       <Wrapper>
         <Title text="Novo Perfil" />
-        <Form>
-          <BoxInput nameInput="name" typeInput="text" nameLabel="Nome" />
-          <BoxInput nameInput="rótulo" typeInput="rótulo" nameLabel="Rótulo" />
+        <Form onSubmit={handleSubmit}>
+          <BoxInput
+            nameInput="name"
+            typeInput="text"
+            nameLabel="Nome"
+            onChange={handleInputChange}
+          />
+          <BoxInput
+            nameInput="label"
+            typeInput="text"
+            nameLabel="Rótulo"
+            onChange={handleInputChange}
+          />
           <Button text="Novo perfil" onSubmit={() => newProfile()} />
+          {error && <ErrorMessage message={error.message} />}
         </Form>
       </Wrapper>
       <Results>
-        <h2>test</h2>
+        {data && (
+          <>
+            <h2>Novo perfil adicionado</h2>
+            <h3>ID</h3>
+            <p>{data.newProfile.id}</p>
+            <h3>Nome</h3>
+            <p>{data.newProfile.name}</p>
+            <h3>Rótulo</h3>
+            <p>{data.newProfile.label}</p>
+          </>
+        )}
       </Results>
     </Section>
   );
